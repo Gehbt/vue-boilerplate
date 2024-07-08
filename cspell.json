@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en",
+  "globRoot": ".",
+  "dictionaryDefinitions": [
+    {
+      "name": "cspell-dict",
+      "path": "./cspell-dict.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": [
+    "cspell-dict"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    "build",
+    "/cspell-dict.txt"
+  ]
+}

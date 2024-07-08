@@ -1,0 +1,35 @@
+html {
+  overflow-y: scroll;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: #dfe9eb;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #dfe9eb;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #b8c0c2;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #737373;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: hsla(160, 100%, 37%, 0.8);
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: hsla(160, 100%, 37%, 0.8);
+}

@@ -3,3 +3,5 @@ commitizen
 pico
 picocss
 reactivex
+suspensible
+swrv

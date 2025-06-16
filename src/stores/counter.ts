@@ -2,6 +2,7 @@ import { ref, computed, type ComputedRef, type Ref } from "vue";
 import { defineStore, type StoreDefinition } from "pinia";
 import type { UnwrapAll } from "./types";
 
+// typeOnly namespace
 declare namespace Count {
   type StateType = { count: Ref<number> };
   type GetterType = {

@@ -2,22 +2,33 @@
 import { createRequire } from "node:module";
 import js from "@eslint/js";
 import ts from "typescript-eslint";
+import vue from "eslint-plugin-vue";
+import {
+  defineConfigWithVueTs,
+  vueTsConfigs,
+  configureVueProject,
+} from "@vue/eslint-config-typescript";
 
-const require = createRequire(import.meta.url);
+configureVueProject({
+  tsSyntaxInTemplates: true,
+  scriptLangs: ["ts"],
+});
 
-const vue = require("eslint-plugin-vue");
-export default ts.config(
+export default defineConfigWithVueTs(
+  // js.configs.recommended,
+  ts.configs.recommended,
+  // eslint-plugin-vue use `import('eslint').Linter.Config`, but @vue/eslint-config-typescript use import('@typescript-eslint/utils').FlatConfig.Config;
+  // LanguageOptions.ecmaVersion in eslint is Number, but in @typescript-eslint/utils' is String
+  // @ts-expect-error - ...
+
+  vue.configs["flat/recommended"],
+  vueTsConfigs.recommended,
   {
-    ignores: ["node_modules", "dist"],
-  },
-  js.configs.recommended,
-  ...ts.configs.recommended,
-  .../** @type {*} */ (vue.configs["flat/recommended"]),
-  {
-    files: ["*.vue", "**/*.vue"],
+    files: ["**/*.{vue,ts}"],
     languageOptions: {
+      sourceType: "module",
       parserOptions: {
-        parser: "@typescript-eslint/parser",
+        parser: ts.parser,
       },
     },
   },
@@ -41,6 +52,15 @@ export default ts.config(
             "about.page",
             "[...404].page",
           ],
+        },
+      ],
+      "vue/component-name-in-template-casing": ["error", "PascalCase"],
+      "vue/block-lang": [
+        "error",
+        {
+          script: {
+            lang: "ts",
+          },
         },
       ],
     },

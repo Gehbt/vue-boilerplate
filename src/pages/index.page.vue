@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import TheWelcome from "../components/welcome/TheWelcome.vue";
+const model = ref<string>("");
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <TheWelcome v-model="model" />
   </main>
 </template>
 

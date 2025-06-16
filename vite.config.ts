@@ -27,4 +27,8 @@ export default defineConfig({
       "@": resolve(import.meta.dirname, "src"),
     },
   },
+  server: {
+    port: 7858,
+    open: true,
+  },
 });

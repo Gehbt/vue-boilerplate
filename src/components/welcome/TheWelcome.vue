@@ -1,8 +1,12 @@
 <script lang="ts">
 import { Icon } from "@iconify/vue";
 </script>
+
 <script setup lang="ts">
 import WelcomeItem from "./WelcomeItem.vue";
+const model = defineModel<string>({
+  required: true,
+});
 </script>
 
 <template>
@@ -156,7 +160,6 @@ import WelcomeItem from "./WelcomeItem.vue";
     >@vuejs</a>
     twitter account for latest news in the Vue world.
   </WelcomeItem>
-
   <WelcomeItem>
     <template #icon>
       <Icon

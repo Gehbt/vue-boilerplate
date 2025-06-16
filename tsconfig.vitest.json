@@ -7,5 +7,6 @@
     "strict": true,
     "lib": ["ES2022"],
     "types": ["node", "jsdom"]
-  }
+  },
+  "include": ["src/components"]
 }

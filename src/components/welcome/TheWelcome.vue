@@ -1,8 +1,8 @@
 <script lang="ts">
-import { Icon } from "@iconify/vue";
 </script>
 
 <script setup lang="ts">
+import { Icon } from "@iconify/vue";
 import WelcomeItem from "./WelcomeItem.vue";
 const model = defineModel<string>({
   required: true,

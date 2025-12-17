@@ -1,11 +1,11 @@
-<script lang="ts">
-</script>
+<script lang="ts"></script>
 
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import WelcomeItem from "./WelcomeItem.vue";
-const model = defineModel<string>({
-  required: true,
+
+defineOptions({
+  inheritAttrs: true,
 });
 </script>
 
@@ -63,7 +63,8 @@ const model = defineModel<string>({
       href="https://github.com/johnsoncodehk/volar"
       target="_blank"
       rel="noopener"
-    >Volar</a>. If you need to test your components and web pages, check out
+    >Volar</a>. If you need to test your
+    components and web pages, check out
     <a
       href="https://www.cypress.io/"
       target="_blank"
@@ -114,7 +115,8 @@ const model = defineModel<string>({
       href="https://github.com/vuejs/devtools"
       target="_blank"
       rel="noopener"
-    >Vue Dev Tools</a>. If you need more resources, we suggest paying
+    >Vue Dev Tools</a>. If you need more
+    resources, we suggest paying
     <a
       href="https://github.com/vuejs/awesome-vue"
       target="_blank"
@@ -146,7 +148,8 @@ const model = defineModel<string>({
       href="https://stackoverflow.com/questions/tagged/vue.js"
       target="_blank"
       rel="noopener"
-    >StackOverflow</a>. You should also subscribe to
+    >StackOverflow</a>. You
+    should also subscribe to
     <a
       href="https://news.vuejs.org"
       target="_blank"
@@ -172,13 +175,14 @@ const model = defineModel<string>({
     <template #heading>
       Support Vue
     </template>
-
-    As an independent project, Vue relies on community backing for its
-    sustainability. You can help us by
-    <a
-      href="https://vuejs.org/sponsor/"
-      target="_blank"
-      rel="noopener"
-    >becoming a sponsor</a>.
+    <template #default="{ msg }">
+      As an independent project, Vue relies on community backing for its
+      sustainability. You can help us by
+      <a
+        href="https://vuejs.org/sponsor/"
+        target="_blank"
+        rel="noopener"
+      >becoming a sponsor {{ msg }}</a>.
+    </template>
   </WelcomeItem>
 </template>

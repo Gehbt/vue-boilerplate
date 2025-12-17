@@ -20,6 +20,10 @@ coverage
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+# .vscode template files
+!.vscode/settings.template.json
+!.vscode/launch.template.json
+!.vscode/task.template.json
 
 .idea
 *.suo
@@ -32,4 +36,3 @@ coverage
 
 # generated
 typed-router.d.ts
-!.vscode/settings.template.json

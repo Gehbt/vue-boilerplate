@@ -9,7 +9,7 @@ export default mergeConfig(
       globals: true,
       environment: "jsdom",
       exclude: [...configDefaults.exclude, "e2e/**"],
-      root: fileURLToPath(import.meta.url),
+      root: import.meta.dirname,
       coverage: {
         provider: "istanbul",
         reporter: ["text", "html"],

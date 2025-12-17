@@ -1,13 +1,15 @@
-import { createRouter, createWebHistory } from "vue-router";
-import { routes, handleHotUpdate } from "vue-router/auto-routes";
-import type { Router } from "vue-router";
+import { experimental_createRouter } from "vue-router/experimental";
+import { resolver, handleHotUpdate } from "vue-router/auto-resolver";
 
-export const router: Router = createRouter({
+import {
+  createWebHistory,
+} from "vue-router";
+
+export const router = experimental_createRouter({
   history: createWebHistory(),
-  routes,
+  resolver,
 });
 
-// This will update routes at runtime without reloading the page
-if (import.meta.hot && import.meta.env.MODE !== "production") {
+if (import.meta.hot) {
   handleHotUpdate(router);
 }

@@ -1,12 +1,17 @@
 {
-  "extends": "@tsconfig/node20/tsconfig.json",
-  "include": ["./*.config.*"],
+  "extends": "@tsconfig/node22/tsconfig.json",
+  "include": [
+    "./*.config.*"
+  ],
   "compilerOptions": {
     "composite": true,
     "noEmit": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "module": "Preserve",
     "moduleResolution": "Bundler",
-    "types": ["node"]
+    "types": [
+      "node"
+    ],
+    "allowImportingTsExtensions": true
   }
 }

@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const msg = ref("Welcome to Vue Boilerplate");
+
+defineSlots<{
+  icon: () => unknown;
+  heading: () => unknown;
+  default: (props: { msg?: string }) => unknown;
+}>();
+
+</script>
+
 <template>
   <div class="item">
     <i>
@@ -7,7 +20,10 @@
       <h3>
         <slot name="heading" />
       </h3>
-      <slot />
+      <slot
+        name="default"
+        :msg="msg"
+      />
     </div>
   </div>
 </template>

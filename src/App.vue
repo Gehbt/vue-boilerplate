@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/welcome/HelloWorld.vue";
-import TheWelcome from "./components/welcome/TheWelcome.vue";
-import NormalCase from "./components/suspense-case/NormalCase.vue";
 </script>
 
 <template>
@@ -27,16 +25,9 @@ import NormalCase from "./components/suspense-case/NormalCase.vue";
       </nav>
     </div>
   </header>
-  <div style="border: 1px solid #fff">
-    <Suspense :suspensible="true">
-      <template #default>
-        <NormalCase />
-      </template>
-      <template #fallback>
-        <h1>Loading...</h1>
-      </template>
-    </Suspense>
-  </div>
+  <main>
+    <RouterView />
+  </main>
 </template>
 
 <style scoped>

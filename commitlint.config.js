@@ -2,7 +2,7 @@
 export default {
   extends: ["@commitlint/config-conventional"],
   prompt: {
-    //option...
+    // option...
     alias: {
       feat: "feat",
       fix: "fix",
